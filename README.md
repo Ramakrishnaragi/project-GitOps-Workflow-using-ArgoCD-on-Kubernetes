@@ -54,6 +54,10 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 ![image](https://github.com/user-attachments/assets/1fbaeec4-eac0-425f-ba4e-fa2218c1fa6d)
 
+- After change the deployment file. Observer the changes in Argocd UI
+
+![image](https://github.com/user-attachments/assets/6d32b715-2368-41ad-975a-ef3df21b092c)
+  
 
 - Check the svc of ngnix server NodePort ----> kubectl get svc -n argocd
 - Then access it from your local browser: http://your-ec2-ip:NodePort or http://localhost:NodePort
