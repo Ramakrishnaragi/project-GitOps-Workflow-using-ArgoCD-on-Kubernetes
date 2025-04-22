@@ -28,7 +28,7 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 # Expose the ArgoCD UI:
 
 - nohup kubectl port-forward svc/argocd-server -n argocd 8080:443 > portforward.log 2>&1 &
-- ssh -i "C:\Path\To\YourKey.pem" -L 8080:localhost:8080 ubuntu@your-remote-ip  # this for just invisible of ec2 server ip address of server (optional)
+- ssh -i "C:\Path\To\YourKey.pem" -L 8080:localhost:8080 ubuntu@your-remote-ip  # # We don’t want to expose of ec2 server NodePort address of server (optional)
 - kubectl get nodes
 
 ![image](https://github.com/user-attachments/assets/37f23e39-af2c-4f02-823c-9e340f96ac01)
