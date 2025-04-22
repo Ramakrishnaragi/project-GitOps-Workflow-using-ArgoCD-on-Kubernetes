@@ -14,9 +14,9 @@
 
 
 # Step-by-Step Guide
-- **Set Up K3s (Kubernetes) on EC2 ----->** curl -sfL https://get.k3s.io | sh –
-- **Check node status:** sudo kubectl get nodes
-- **Set up kubectl for current user:**
+- Set Up K3s (Kubernetes) on EC2 -----> curl -sfL https://get.k3s.io | sh –
+- Check node status: sudo kubectl get nodes
+- Set up kubectl for current user:
 ```sh   
 mkdir -p $HOME/.kube
 sudo cp /etc/rancher/k3s/k3s.yaml $HOME/.kube/config
@@ -35,15 +35,15 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 - kubectl edit svc argocd-server -n argocd  #change the clusterIP to nodeport
 # Access vi : http://<ec2-user-ip>:8080
-- **Get ArgoCD Admin Password:** kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath="{.data.password}" | base64 -d
+- Get ArgoCD Admin Password: kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath="{.data.password}" | base64 -d
 
 # Create Your GitHub Repo
-- **Push the following sample YAML files to a public GitHub repo:**
+- Push the following sample YAML files to a public GitHub repo:
       1.	deployment.yaml
       2.	service.yaml
-- **Configure ArgoCD to Sync from Git:** application.yml
+- Configure ArgoCD to Sync from Git: application.yml
 - Apply it: kubectl apply -f .
-- **Verify Deployment:** kubectl get all
+- Verify Deployment: kubectl get all
 - Then push the files into the GitHub repo, check the argocd UI
 
 ![image](https://github.com/user-attachments/assets/7524bea7-182c-4420-8417-a1b209581fc5)
@@ -55,11 +55,11 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ![image](https://github.com/user-attachments/assets/1fbaeec4-eac0-425f-ba4e-fa2218c1fa6d)
 
 
-- **Check the svc of ngnix server NodePort ---->** kubectl get svc -n argocd
-- **Then access it from your local browser:** http://your-ec2-ip:NodePort or http://localhost:NodePort
+- Check the svc of ngnix server NodePort ----> kubectl get svc -n argocd
+- Then access it from your local browser: http://your-ec2-ip:NodePort or http://localhost:NodePort
 
 ![image](https://github.com/user-attachments/assets/f92b2136-05a4-4b54-abcf-b0bf320e6f22)
 
 
 
-- **Check the EC2 port in security Group ---->** if application is not access means check the server sg
+- Check the EC2 port in security Group ----> if application is not access means check the server sg
