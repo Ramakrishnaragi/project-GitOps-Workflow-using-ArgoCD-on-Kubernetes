@@ -2,7 +2,7 @@
 # Objective: 
 - Implement GitOps to automate Kubernetes deployments by syncing with a GitHub repository using ArgoCD.
 # Tools:
-- EC2 (Ubuntu)
+- EC2 (Ubuntu)------pick t2.medium instance
 - K3s (Lightweight Kubernetes)
 - ArgoCD
 - GitHub
