@@ -34,7 +34,7 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ![image](https://github.com/user-attachments/assets/37f23e39-af2c-4f02-823c-9e340f96ac01)
 
 - kubectl edit svc argocd-server -n argocd  #change the clusterIP to nodeport
-# Access vi : http://<ec2-user-ip>:8080
+- Access vi : http://ec2-user-ip:8080
 - Get ArgoCD Admin Password: kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath="{.data.password}" | base64 -d
 
 # Create Your GitHub Repo
